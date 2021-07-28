@@ -149,7 +149,7 @@
         -webkit-text-decoration-skip: objects;
     }
     a:hover {
-        color: #2E185E;
+        color: #EF583A;
         text-decoration: none;
     }
     a:not([href]):not([tabindex]) {
