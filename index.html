@@ -298,24 +298,21 @@
          form.addEventListener('submit', e => {
             e.preventDefault()
             fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+               var v = grecaptcha.getResponse();
+               if(v.length == 0)
+               {
+                  document.getElementById('captcha').innerHTML="You can't leave Captcha Code empty";
+                  return false;
+               }
+               else
+               {
+                     document.getElementById('captcha').innerHTML="Captcha completed";
+                  return true; 
+               }
                .then(response => console.log('Success!', response))
                .catch(error => console.error('Error!', error.message))
                alert("Obrigado! Aguarde nosso contato! :)");
                document.getElementById("myForm").reset();
-               function get_action(form) 
-               {
-                  var v = grecaptcha.getResponse();
-                  if(v.length == 0)
-                  {
-                     document.getElementById('captcha').innerHTML="You can't leave Captcha Code empty";
-                     return false;
-                  }
-                  else
-                  {
-                        document.getElementById('captcha').innerHTML="Captcha completed";
-                     return true; 
-                  }
-               }               
          })
       </script>
    </body>
