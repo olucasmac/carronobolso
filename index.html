@@ -93,9 +93,6 @@
                         </div>
                      </div-->
                      <div class="form-group">
-                        <div class="g-recaptcha" id="rcaptcha"  data-sitekey="6LetIcsbAAAAAECrq28VnaTT7cxcuAY2_KDLeShr"></div>
-                        <span id="captcha" style="color:red" /></span> <!-- this will show captcha errors -->
-                        <br>
                         <input type="submit" class="btn btn-orange btn-lg btn-block pb_btn-pill  btn-shadow-blue" value="Enviar">
                      </div>
                   </form>
@@ -298,19 +295,10 @@
          form.addEventListener('submit', e => {
             e.preventDefault()
             fetch(scriptURL, { method: 'POST', body: new FormData(form)})
-               var v = grecaptcha.getResponse();
-               if(v.length == 0)
-               {
-                  document.getElementById('captcha').innerHTML="You can't leave Captcha Code empty";
-                  return false;
-               }
-               else
-               {
-                     document.getElementById('captcha').innerHTML="Captcha completed";
-                  return true; 
-               }
                .then(response => console.log('Success!', response))
                .catch(error => console.error('Error!', error.message))
+               alert("Obrigado! Aguarde nosso contato! :)");
+               document.getElementById("myForm").reset();
          })
       </script>
    </body>
