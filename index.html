@@ -41,6 +41,25 @@
             margin-top:16px;
          }
       </style>
+      <script src='https://www.google.com/recaptcha/api.js'></script>
+      <script>
+
+      function get_action(form) 
+      {
+         var v = grecaptcha.getResponse();
+         if(v.length == 0)
+         {
+            document.getElementById('captcha').innerHTML="You can't leave Captcha Code empty";
+            return false;
+         }
+         else
+         {
+               document.getElementById('captcha').innerHTML="Captcha completed";
+            return true; 
+         }
+      }
+
+      </script>      
    </head>
    <body data-spy="scroll" data-target="#pb-navbar" data-offset="200">
       <nav class="navbar navbar-expand-lg navbar-dark pb_navbar pb_scrolled-light" id="pb-navbar">
@@ -93,6 +112,9 @@
                         </div>
                      </div-->
                      <div class="form-group">
+                        <div class="g-recaptcha" id="rcaptcha"  data-sitekey="site key"></div>
+                        <span id="captcha" style="color:red" /></span> <!-- this will show captcha errors -->
+                        <br>
                         <input type="submit" class="btn btn-orange btn-lg btn-block pb_btn-pill  btn-shadow-blue" value="Enviar">
                      </div>
                   </form>
