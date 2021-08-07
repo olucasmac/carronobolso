@@ -17,6 +17,47 @@
       <meta name="msapplication-TileImage" content="https://secureservercdn.net/198.71.233.167/oh5.be1.myftpupload.com/wp-content/uploads/2021/06/cropped-FAVICOM-512X512PXLS-02-270x270.png" />      
       <meta name="robots" content="noindex, nofollow">
       <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"/>
+      <!-- Global site tag (gtag.js) - Google Ads: 339956497 -->
+      <script async src="https://www.googletagmanager.com/gtag/js?id=AW-339956497"></script>
+      <script>
+         window.dataLayer = window.dataLayer || [];
+         function gtag(){dataLayer.push(arguments);}
+         gtag('js', new Date());
+         gtag('config', 'AW-339956497');
+      </script>
+      <!-- Event snippet for Lead conversion page
+      In your html page, add the snippet and call gtag_report_conversion when someone clicks on the chosen link or button. -->
+      <script>
+         function gtag_report_conversion(url) {
+         var callback = function () {
+            if (typeof(url) != 'undefined') {
+               window.location = url;
+            }
+         };
+         gtag('event', 'conversion', {
+               'send_to': 'AW-339956497/1keVCM7t7NYCEJGmjaIB',
+               'event_callback': callback
+         });
+         return false;
+         }
+      </script>
+      <!-- Facebook Pixel Code -->
+      <script>
+         !function(f,b,e,v,n,t,s)
+         {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+         n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+         if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+         n.queue=[];t=b.createElement(e);t.async=!0;
+         t.src=v;s=b.getElementsByTagName(e)[0];
+         s.parentNode.insertBefore(t,s)}(window, document,'script',
+         'https://connect.facebook.net/en_US/fbevents.js');
+         fbq('init', '253689482845527');
+         fbq('track', 'PageView');
+         </script>
+         <noscript><img height="1" width="1" style="display:none"
+         src="https://www.facebook.com/tr?id=253689482845527&ev=PageView&noscript=1"
+         /></noscript>
+      <!-- End Facebook Pixel Code -->        
       <style>
          input,
          input::-webkit-input-placeholder {
@@ -93,7 +134,7 @@
                         </div>
                      </div-->
                      <div class="form-group">
-                        <input type="submit" class="btn btn-orange btn-lg btn-block pb_btn-pill  btn-shadow-blue" value="Enviar">
+                        <input onclick="gtag_report_conversion('https://carronobolso.com');" type="submit" class="btn btn-orange btn-lg btn-block pb_btn-pill  btn-shadow-blue" value="Enviar">
                      </div>
                   </form>
                </div>
@@ -238,7 +279,7 @@
                         </div>
                      </div-->
                      <div class="form-group">
-                        <input type="submit" class="btn btn-orange btn-lg btn-block pb_btn-pill  btn-shadow-blue" value="Enviar">
+                        <input onclick="gtag_report_conversion('https://carronobolso.com');" type="submit" class="btn btn-orange btn-lg btn-block pb_btn-pill  btn-shadow-blue" value="Enviar">
                      </div>
                   </form>
                </div>
