@@ -81,31 +81,6 @@
          .my-float{
             margin-top:16px;
          }
-         .control:checked ~ .conditional,
-                  #immigrant:checked ~ .conditional,
-                  #required-2:checked ~ .conditional
-                  #option-2:checked ~ .conditional {
-                     clip: auto;
-                     height: auto;
-                     margin: 0;
-                     overflow: visible;
-                     position: static;
-                     width: auto;
-                  }
-
-                  .control:not(:checked) ~ .conditional,
-                  #immigrant:not(:checked) ~ .conditional,
-                  #required-2:not(:checked) ~ .conditional,
-                  #option-2:not(:checked) ~ .conditional {
-                     border: 0;
-                     clip: rect(0 0 0 0);
-                     height: 1px;
-                     margin: -1px;
-                     overflow: hidden;
-                     padding: 0;
-                     position: absolute;
-                     width: 1px;
-                  }         
       </style>
    </head>
    <body data-spy="scroll" data-target="#pb-navbar" data-offset="200">
@@ -290,31 +265,23 @@
                   <form action="index.html#" class="bg-white rounded pb_form_v1" name="submit-to-google-sheet" id="myForm">
                      <h3 class="mb-4 mt-0 text-center">Preencha o formulário e aguarde nosso contato para fazer a avaliação de seu carro.</h3>
                      <div class="form-group">
-                        Nome:
+                        Nome
                         <input name="name" type="text" class="form-control pb_height-50 reverse" style="font-family:montserrat,Arial,sans-serif,FontAwesome" placeholder="&#xf007;  Informe seu nome completo" required>
                      </div>
                      <div class="form-group">
-                        Telefone:
+                        Telefone
                         <input name="phone" type="tel" class="form-control pb_height-50 reverse" style="font-family:montserrat,Arial,sans-serif,FontAwesome" placeholder="&#xf095;  (31) 99999-9999" maxlength="15" required>
                      </div>
-                     <div class="form-group">
-                     Local da Avaliação:
-                     <p></p>
-                     <fieldset>
-                           <lo>
-                              <input name="address" type="checkbox" id="requirement" class="control" value="cnb_address">
-                              <label for="requirement">Endereço da Carro no Bolso</label>
-                           </lo>
-                           <br/>
-                           <lo>
-                              <input name="address" type="checkbox" id="requirement" class="control">
-                              <label for="requirement">A domicílio</label>
-                              <fieldset class="conditional">
-                                 <input name="address" type="text" class="form-control pb_height-50 reverse" style="font-family:montserrat,Arial,sans-serif,FontAwesome" placeholder="&#xf041;  Endereço" maxlength="255" required>
-                              </fieldset>
-                           </lo>
-                     </fieldset>                     
-                     </div>
+                     <!--div class="form-group">
+                        <div class="pb_select-wrap">
+                           <select class="form-control pb_height-50 reverse">
+                              <option value="" selected>ALGUMA-INFORMACAO-???</option>
+                              <option value="">Basic</option>
+                              <option value="">Business</option>
+                              <option value="">Free</option>
+                           </select>
+                        </div>
+                     </div-->
                      <div class="form-group">
                         <input onclick="gtag_report_conversion('https://carronobolso.com');" type="submit" class="btn btn-orange btn-lg btn-block pb_btn-pill  btn-shadow-blue" value="Enviar">
                      </div>
