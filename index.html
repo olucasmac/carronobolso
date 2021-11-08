@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
    <head>
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -113,7 +113,7 @@
                </div>
                <div class="col-md-1"></div>
                <div class="col-md-5 relative align-self-center">
-                  <form action="index.html#" class="bg-white rounded pb_form_v1" name="submit-to-google-sheet" id="myForm">
+                  <form action="index.html#" class="bg-white rounded pb_form_v1" name="submit-to-google-sheet-a" id="myForm">
                      <h3 class="mb-4 mt-0 text-center">Preencha o formulário e aguarde nosso contato para fazer a avaliação de seu carro.</h3>
                      <div class="form-group">
                         Nome
@@ -263,7 +263,7 @@
                   </div>
                </div>
                <div class="col-md-6 relative align-self-center">
-                  <!-- form action="index.html#" class="bg-white rounded pb_form_v1" name="submit-to-google-sheet" id="myForm2">
+                  <form action="index.html#" class="bg-white rounded pb_form_v1" name="submit-to-google-sheet-b" id="myForm2">
                      <h3 class="mb-4 mt-0 text-center">Preencha o formulário e aguarde nosso contato para fazer a avaliação de seu carro.</h3>
                      <div class="form-group">
                         Nome
@@ -276,7 +276,7 @@
                      <div class="form-group">
                         <input onclick="gtag_report_conversion('https://carronobolso.com');" type="submit" class="btn btn-orange btn-lg btn-block pb_btn-pill  btn-shadow-blue" value="Enviar">
                      </div>
-                  </form -->
+                  </form>
                <button onclick="location.href='#form_1';" style="width: 70%; margin-left: auto; margin-right: auto;" class="btn btn-orange btn-lg btn-block pb_btn-pill  btn-shadow-blue">QUERO VENDER MEU CARRO</button>
                </div>
             </div>
@@ -353,15 +353,24 @@
       <script src="assets/js/main.js"></script>
       <script>
          const scriptURL = 'https://script.google.com/macros/s/AKfycbxBKfru9hVQOubw5T8ISTEMVK7cLbL_jAWRb1yxlhsqOwyTfFLp/exec'
-         const form = document.forms['submit-to-google-sheet']
+         const formA = document.forms['submit-to-google-sheet-a']
+         const formB = document.forms['submit-to-google-sheet-b']
 
-         form.addEventListener('submit', e => {
+         formA.addEventListener('submit', e => {
             e.preventDefault()
-            fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+            fetch(scriptURL, { method: 'POST', body: new FormData(formA)})
                .then(response => console.log('Success!', response))
                .catch(error => console.error('Error!', error.message))
                alert("Obrigado! Entraremos em contato em até 24 horas!");
                document.getElementById("myForm").reset();
+         })
+         formA.addEventListener('submit', e => {
+            e.preventDefault()
+            fetch(scriptURL, { method: 'POST', body: new FormData(formB)})
+               .then(response => console.log('Success!', response))
+               .catch(error => console.error('Error!', error.message))
+               alert("Obrigado! Entraremos em contato em até 24 horas!");
+               document.getElementById("myForm2").reset();
          })
       </script>
    </body>
