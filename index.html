@@ -362,7 +362,7 @@
                alert("Obrigado! Entraremos em contato em até 24 horas!");
                document.getElementById("myForm").reset();
          })
-         formA.addEventListener('submit', e => {
+         formB.addEventListener('submit', e => {
             e.preventDefault()
             fetch(scriptURL, { method: 'POST', body: new FormData(formB)})
                .then(response => console.log('Success!', response))
